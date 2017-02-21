@@ -118,3 +118,20 @@ function mouseClicked() {
         wave = 3;
     }
 }
+
+function touchEnd() {
+    destAmp = (windowHeight/2) - mouseY;
+    if(destAmp > amp) {
+        moving = 1;
+    }
+    if(destAmp < amp) {
+        moving = 2;
+    }
+    if(sinBut.checkClick()) {
+        wave = 1;
+    } else if(cosBut.checkClick()) {
+        wave = 2;
+    } else if(tanBut.checkClick()) {
+        wave = 3;
+    }
+}

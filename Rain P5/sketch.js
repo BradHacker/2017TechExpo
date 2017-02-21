@@ -11,7 +11,7 @@ var bucketRGB = [132, 135, 137];
 //Create Canvas, Rain, and Water bucket. Also adjust rain drop variables based upon width
 function setup() {
 	createCanvas(windowWidth, windowHeight)
-	for(i = 0; i < 1000; i++) {
+	for(i = 0; i < (windowWidth * 1.5); i++) {
 		drops[i] = new Rain();
 		drops[i].checkVars();
 	}

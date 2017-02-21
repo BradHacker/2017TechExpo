@@ -21,15 +21,15 @@ function Rain() {
 	
 	//Influence Speed and Length based on Thickness (Depth)
 	this.checkVars = function() {
-		if(this.thick < 2) {
+		if(this.thick < 2.75) {
 			this.speed -= 4;
 			this.length -= 5;
 			this.thick = 1;
-		} else if (this.thick >= 2 && this.thick < 3) {
+		} else if (this.thick >= 2.75 && this.thick < 3.6) {
 			this.speed = this.speed;
 			this.length = this.length;
 			this.thick = 2;
-		} else if (this.thick >= 3) {
+		} else if (this.thick >= 3.6) {
 			this.speed += 4;
 			this.length += 5;
 			this.thick = 3;

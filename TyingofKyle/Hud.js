@@ -8,6 +8,9 @@ function Hud() {
 	this.ap = 0;
 	this.score = 0;
 	this.xp = 0;
+	this.xpWidth = 0;
+	this.level = 1;
+	this.levelText = "Level " + this.level;
 	this.lp = 0;
 	this.coolDownInc = 60/75;
 	this.coolDownHeight = 75;
@@ -24,6 +27,7 @@ function Hud() {
 		rect(0,0,windowWidth,145);
 		fill(50);
 		rect(windowWidth - 335, 25, 310, 95);
+		rect(windowWidth/2 - 405, 25, this.xpWidth, 80);
 		fill(100);
 		rect(windowWidth - 325, 35, 290, 75);
 		textFont("Sans-Serif");
@@ -32,10 +36,11 @@ function Hud() {
 		noStroke();
 		fill(50);
 		rect(windowWidth - 320, 40, 280, 30);
+		fill(color(255, 128, 0));
+		rect(windowWidth/2 - 400, 30, 800, 70);
 		fill(this.hpColor);
 		textAlign(LEFT,CENTER);
 		rect(windowWidth - 320, 40, this.hpWidth, 30);
-		//console.log(this.hpWidth);
 		fill(255);
 		this.hpText = "HP: " + this.hp;
 		text(this.hpText, windowWidth - 320, 40, 100, 30);
@@ -52,5 +57,10 @@ function Hud() {
 	this.drawCoolDown = function() {
 		fill(color(51, 119, 255));
 		rect(windowWidth - 370, 35, 30, this.coolDownHeight);
+	}
+	
+	this.addXP = function(amount) {
+	    this.xp += amount;
+	    this.xpWidth
 	}
 }

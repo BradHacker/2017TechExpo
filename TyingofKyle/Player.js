@@ -14,7 +14,7 @@ function Player() {
 	4 - Down
 	*/
 	this.color = color(51, 119, 255);
-	this.radius = 25;
+	this.radius = 30;
 	this.alive = true;
 	this.knifeX = this.x;
 	this.knifeY = this.y;
@@ -68,19 +68,19 @@ function Player() {
 	}
 
 	this.checkCollision = function() {
-		if(this.y - 25 <= 145) {
+		if(this.y - this.radius <= 145) {
 			this.y = 170;
 			//console.log("top");
 		}
-		if(this.y + 25 >= windowHeight) {
+		if(this.y + this.radius >= windowHeight) {
 			this.y = windowHeight - 25;
 			//console.log("bottom");
 		}
-		if(this.x - 25 <= 0) {
+		if(this.x - this.radius <= 0) {
 			this.x = 25;
 			//console.log("left");
 		}
-		if(this.x + 25 >= windowWidth) {
+		if(this.x + this.radius >= windowWidth) {
 			this.x = windowWidth - 25;
 			//console.log("right");
 		}

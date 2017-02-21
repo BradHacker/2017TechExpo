@@ -3,7 +3,7 @@ var hud;
 var enemies = [];
 var restartBut;
 var wave = 1;
-var enemyAmount = 10 * wave;
+var enemyAmount = 10 * (wave + (wave/2));
 var enemiesKilled = 0;
 var waveWait;
 var gameOverText = 'Game Over';
@@ -78,7 +78,8 @@ function draw() {
 				if(enemies[a].checkKill(player.knifeX, player.knifeY, player.knifeRad)) {
 					enemiesKilled += 1;
 					hud.score += 10;
-					//console.log(hud.score);
+					hud.xp += 1;
+					console.log('XP: ' + hud.xp);
 				}
 			}
 		}
@@ -88,7 +89,7 @@ function draw() {
 		}
 		if(enemiesKilled == enemyAmount) {
 			wave += 1;
-			enemyAmount = 10 * wave;
+			enemyAmount = 10 * (wave + (wave/2));
 			enemiesKilled = 0;
 			waveWait = 0;
 			//console.log("Wave: " + wave);
@@ -156,7 +157,7 @@ function draw() {
 			fill(color(255, 0, 0));
 			textAlign(CENTER,CENTER);
 			strokeWeight(100);
-			text("NO HACKS! Charging " + prompt('DONT HACK EVER AGAIN! Enter your credit card info to send the Nigerian Prince $1000 or your OS will be deleted in 2 minutes.', 'Your Mom'), 0, 0, windowWidth, windowHeight);
+			text("NO HACKS! Charging " + prompt('DONT HACK EVER AGAIN! Enter your credit card info to send the Nigerian Prince $1000 or your OS will be deleted in 2 minutes.', '**** **** **** ****'), 0, 0, windowWidth, windowHeight);
 			
 		}
 	}
