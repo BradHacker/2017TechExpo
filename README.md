@@ -1,4 +1,4 @@
-# 2017TechExpo
+# 2017 Tech Expo
 
 These are made using the `p5.js` javascript library. [P5JS Website](https://p5js.org/)
 
