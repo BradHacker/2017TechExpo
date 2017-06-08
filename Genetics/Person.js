@@ -1,3 +1,8 @@
+/*
+Created by Bradley Harker and Elijah Wilson
+Design Lead - Elijah Wilson
+Progamming Lead - Bradley Harker
+*/
 function Person(allele, person) {
     this.gene1 = allele.gene1;
     this.gene2 = allele.gene2;

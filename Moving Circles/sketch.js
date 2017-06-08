@@ -7,6 +7,7 @@ var circles = [];
 var r;
 var g;
 var b;
+var back
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -17,6 +18,7 @@ function setup() {
 		b = random(255);
 		circles[i].fillColor = color(255);
     }
+    back = new BackButton()
 }
 
 function draw() {
@@ -36,11 +38,12 @@ function draw() {
 	    }
         circles[i].update();
     }
-	
+	back.draw()
 }
 
 function mousePressed() {
-    circles.push(new Circle(true));
+  back.checkClick()
+  circles.push(new Circle(true));
 	r = random(50,255);
 	g = random(50,255);
 	b = random(50,255);

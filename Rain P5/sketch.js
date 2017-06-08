@@ -7,6 +7,7 @@ var drops = [];
 var water = [];
 var waterRGB = [152, 170, 173];
 var bucketRGB = [132, 135, 137];
+var back;
 
 //Create Canvas, Rain, and Water bucket. Also adjust rain drop variables based upon width
 function setup() {
@@ -16,6 +17,7 @@ function setup() {
 		drops[i].checkVars();
 	}
 	water[0] = new Water();
+	back = new BackButton()
 }
 
 function draw() {
@@ -71,4 +73,10 @@ function draw() {
 		water[0].y = mouseY + 42;
 		rect(mouseX - 42, water[0].y, 84, -1 * water[0].filled);
 	}
+	back.draw()
+	noStroke();
+}
+
+function mousePressed() {
+  back.checkClick()
 }

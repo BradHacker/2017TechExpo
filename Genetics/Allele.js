@@ -1,3 +1,8 @@
+/*
+Created by Bradley Harker and Elijah Wilson
+Design Lead - Elijah Wilson
+Progamming Lead - Bradley Harker
+*/
 function Allele(person) {
     this.color1 = color(255,255,255);
     this.color2 = color(255,255,255);

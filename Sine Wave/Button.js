@@ -1,8 +1,14 @@
+/*
+Created by Bradley Harker and Elijah Wilson
+Design Lead - Elijah Wilson
+Progamming Lead - Bradley Harker
+*/
 function Button(type) {
     this.type = type;
     //Type: 1 - Sine, 2 - Cosine, 3 - Tangent
-    this.width = 250;
-    this.height = 100;
+    this.width = windowWidth*0.130208333;
+    this.height = windowHeight*0.0925925926;
+    this.fontSize = windowWidth*0.0260416667
     this.x;
     this.y;
     this.fillColor;
@@ -13,8 +19,8 @@ function Button(type) {
         this.y = (windowHeight/8) - (this.height/2);
         if(this.type == 1) {
             this.x = (windowWidth/4) - (this.width/2);
-            this.fillColor = color(255, 255, 102);
-            this.strokeColor = color(230, 230, 0);
+            this.fillColor = color(204, 0, 204);
+            this.strokeColor = color(128, 0, 128);
             this.title = "Sine";
         } else if(this.type == 2) {
             this.x = (windowWidth/2) - (this.width/2);
@@ -34,7 +40,7 @@ function Button(type) {
         stroke(this.strokeColor);
         strokeWeight(10);
         rect(this.x,this.y,this.width,this.height);
-        textSize(50);
+        textSize(this.fontSize);
         textFont("Sans-Serif");
         stroke(255);
         strokeWeight(1);

@@ -1,3 +1,8 @@
+/*
+Created by Bradley Harker and Elijah Wilson
+Design Lead - Elijah Wilson
+Progamming Lead - Bradley Harker
+*/
 function GrowUpButton(parent1, parent2) {
     this.centerX = windowWidth/4;
     this.centerY = windowHeight/4 * 3;

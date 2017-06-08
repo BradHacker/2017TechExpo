@@ -18,7 +18,7 @@ var r = 0;
 var g = 0;
 var b = 0;
 var moving = 0;
-var movingSpeed = 1;
+var movingSpeed = .5;
 var wave = 1;
 /*
 Wave Key -
@@ -29,35 +29,41 @@ Wave Key -
 var sinBut;
 var cosBut;
 var tanBut;
+var wavelength = 2
+var back
 
 function setup() {
-    createCanvas(windowWidth,windowHeight);
-    amp = 1;
-    r = 50;
-    for(i=0;i<dotAmount;i++) {
-        dots.push(new Dot());
-        dots[i].color = color(r,0,0);
-        r += (205/dotAmount);
-        console.log(r);
-        dots[i].x = ((((windowWidth/spaces)) - (10/spaces)) * i) + 5;
-        dots[i].y = amp * sin(2*dots[i].x - shift) + (windowHeight / 2);
-        dots[i].draw();
-    }
-    for(i=0;i<dotAmount-1;i++) {
-        if(i < dotAmount) {
-            stroke(dots[i].color);
-            strokeWeight(2);
-            line(dots[i].x, dots[i].y, dots[i+1].x, dots[i+1].y);
-        }
-    }
-    
-    sinBut = new Button(1);
-    cosBut = new Button(2);
-    tanBut = new Button(3);
-    
-    sinBut.init();
-    cosBut.init();
-    tanBut.init();
+  dotAmount = Math.round(windowWidth*0.106770833)
+  var spaces = dotAmount - 1
+  console.log(dotAmount)
+  createCanvas(windowWidth,windowHeight);
+  amp = 1;
+  r = 50;
+  for(i=0;i<dotAmount;i++) {
+      dots.push(new Dot());
+      dots[i].color = color(r,0,0);
+      r += (205/dotAmount);
+      console.log(r);
+      dots[i].x = ((((windowWidth/spaces)) - (10/spaces)) * i) + 5;
+      dots[i].y = amp * sin(2*dots[i].x - shift) + (windowHeight / 2);
+      dots[i].draw();
+  }
+  for(i=0;i<dotAmount-1;i++) {
+      if(i < dotAmount) {
+          stroke(dots[i].color);
+          strokeWeight(2);
+          line(dots[i].x, dots[i].y, dots[i+1].x, dots[i+1].y);
+      }
+  }
+  
+  sinBut = new Button(1);
+  cosBut = new Button(2);
+  tanBut = new Button(3);
+  
+  sinBut.init();
+  cosBut.init();
+  tanBut.init();
+  back = new BackButton()
 }
 
 function draw() {
@@ -101,8 +107,11 @@ function draw() {
     sinBut.draw();
     cosBut.draw();
     tanBut.draw();
+    ampUpdate()
+    back.draw()
 }
 function mouseClicked() {
+  back.checkClick()
     destAmp = (windowHeight/2) - mouseY;
     if(destAmp > amp) {
         moving = 1;
@@ -134,4 +143,10 @@ function touchEnd() {
     } else if(tanBut.checkClick()) {
         wave = 3;
     }
+}
+
+function ampUpdate() {
+  dispAmp = (windowHeight/2) - mouseY
+  textSize(10)
+  text("Amp: " + dispAmp, mouseX+20, mouseY+30)
 }

@@ -1,3 +1,8 @@
+/*
+Created by Bradley Harker and Elijah Wilson
+Design Lead - Elijah Wilson
+Progamming Lead - Bradley Harker
+*/
 var allele1;
 var allele2;
 var allele3;
@@ -9,6 +14,7 @@ var childBut;
 var growUpBut;
 var parent1GeneChoice;
 var parent2GeneChoice;
+var back
 
 function setup() {
     createCanvas(windowWidth,windowHeight);
@@ -32,11 +38,12 @@ function setup() {
     
     child.made = false;
     allele3.made = false;
+    back = new BackButton()
 }
 
 function draw() {
     background(color(255, 140, 26));
-    
+    noStroke()
     //Draw Parent 1 on Left
     parent1.setColor();
     parent1.draw();
@@ -59,9 +66,11 @@ function draw() {
     partnerBut.draw();
     childBut.draw();
     growUpBut.draw();
+    back.draw()
 }
 
 function mousePressed() {
+  back.checkClick()
     //Generate New Partner
     if(partnerBut.checkClick()) {
         allele2.gene1 = random([1,2]);

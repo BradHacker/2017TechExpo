@@ -55,11 +55,11 @@ function Enemy() {
 
   this.checkKill = function(otherX, otherY, otherRad) {
     if(a!= b && (sqrt(pow((enemies[a].x - otherX),2)+pow((enemies[a].y - otherY),2)) <= enemies[a].radius + otherRad)) {
-		//console.log("touching");
-		this.telRand();
-    this.dead = true;
-		return true;
-	}
+  		//console.log("touching");
+  		this.telRand();
+      this.dead = true;
+  		return true;
+  	}
   }
 
 

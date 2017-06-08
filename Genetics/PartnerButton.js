@@ -1,3 +1,8 @@
+/*
+Created by Bradley Harker and Elijah Wilson
+Design Lead - Elijah Wilson
+Progamming Lead - Bradley Harker
+*/
 function PartnerButton() {
     this.centerX = windowWidth/4 * 3;
     this.centerY = (windowHeight/4) * 3;

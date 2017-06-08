@@ -7,17 +7,19 @@ var dots = [];
 var overbox = 3;
 var backColorR = 0;
 var backColorG = 0;
-var backColorB = 0; 
+var backColorB = 0;
+var back
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	for(i = 0; i < 3; i++) {
 		dots[i] = new Dot();
-		console.log("created");
+		// console.log("created");
 	}
 	backColorR = random(255);
 	backColorG = random(255);
 	backColorB = random(255);
+	back = new BackButton()
 }
 
 function draw() {
@@ -100,11 +102,11 @@ function draw() {
 		}
 	}
 	
-	console.log("fill");
-	console.log(dots[0].xColor + "," + dots[1].xColor + "," + dots[2].xColor);
-	console.log("back");
-	console.log(backColorR + "," + backColorG + "," + backColorB);
-	
+// 	console.log("fill");
+// 	console.log(dots[0].xColor + "," + dots[1].xColor + "," + dots[2].xColor);
+// 	console.log("back");
+// 	console.log(backColorR + "," + backColorG + "," + backColorB);
+	back.draw()
 }
 
 function mouseDragged() {
@@ -138,4 +140,8 @@ function win() {
 
 function winFlash() {
 	
+}
+
+function mouseClicked() {
+  back.checkClick()
 }

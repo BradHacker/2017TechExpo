@@ -3,13 +3,14 @@ function Player() {
 	this.y = windowHeight/2;
 	this.width = 60;
 	this.height = 60;
-	this.speed = 10;
+	this.speed = 5;
 	this.direction = 1;
 	this.hp = 100;
+	this.hpMax = 100
 	/*
 	Direction Key -
 	1 - Up
-	2 - Right
+	2 - Rights
 	3 - Left
 	4 - Down
 	*/
@@ -24,10 +25,12 @@ function Player() {
 	this.knifeEndY = this.y + (this.knifeRad * sin(this.knifeAngle));
 	this.swinging = false;
 	this.swingCool = 0;
-	this.coolDownInc = 10/60;
+	this.coolDownMax = 60;
+	this.coolDownInc = 10/this.coolDownMax;
 	this.coolDownRadius = 25;
 	this.full = true;
 	this.hacked = false;
+	this.score = 0
 
 	this.move = function(direction) {
 		this.direction = direction;
@@ -54,9 +57,10 @@ function Player() {
 		fill(this.color);
 		noStroke();
 		ellipse(this.x,this.y,this.width,this.height);
-		if(this.coolDownRadius < 25) {
+		if(Math.round(this.coolDownRadius) < 25) {
 			this.full = false;
 		} else {
+		  this.coolDownRadius = 25
 			this.full = true;
 		}
 		if(this.full) {
@@ -69,19 +73,19 @@ function Player() {
 
 	this.checkCollision = function() {
 		if(this.y - this.radius <= 145) {
-			this.y = 170;
+			this.y = 175;
 			//console.log("top");
 		}
 		if(this.y + this.radius >= windowHeight) {
-			this.y = windowHeight - 25;
+			this.y = windowHeight - 30;
 			//console.log("bottom");
 		}
 		if(this.x - this.radius <= 0) {
-			this.x = 25;
+			this.x = 30;
 			//console.log("left");
 		}
 		if(this.x + this.radius >= windowWidth) {
-			this.x = windowWidth - 25;
+			this.x = windowWidth - 30;
 			//console.log("right");
 		}
 		this.knifeX = this.x;
@@ -108,7 +112,7 @@ function Player() {
 			} else if(this.knifeAngle >= 360) {
 				this.swinging = false;
 				this.knifeAngle = 0;
-				this.swingCool = 60;
+				this.swingCool = this.coolDownMax;
 				this.coolDownRadius = 15;
 				this.full = false;
 			}

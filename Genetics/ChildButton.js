@@ -1,3 +1,8 @@
+/*
+Created by Bradley Harker and Elijah Wilson
+Design Lead - Elijah Wilson
+Progamming Lead - Bradley Harker
+*/
 function ChildButton(parent1, parent2) {
     this.centerX = windowWidth/2;
     this.centerY = windowHeight/3;
