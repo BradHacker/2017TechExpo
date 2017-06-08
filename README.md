@@ -1,3 +1,5 @@
+### This version has a WIP soundtrack
+
 # 2017 Tech Expo
 
 These are made using the `p5.js` javascript library. [P5JS Website](https://p5js.org/)
@@ -12,5 +14,3 @@ Created By - Bradley Harker and Elijah Wilson
 * Sine Wave
 * Genetics
 * Dot Doodle
-
-### This Is The Final Version For This Collection
