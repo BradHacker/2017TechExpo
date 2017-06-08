@@ -1,20 +1,16 @@
 # 2017TechExpo
 
-These are made using the `p5.js` javascript library. https://p5js.org/
+These are made using the `p5.js` javascript library. [P5JS Website](https://p5js.org/)
 
 Created By - Bradley Harker and Elijah Wilson
 
-### Games
+## Projects
 * Rain Collector
 * Color Triangle
 * Tying Of Kyle
-
-### Demonstrations
 * Moving Circles
 * Sine Wave
 * Genetics
+* Dot Doodle
 
-##Changelog 1.2 -
-* Updated Tying of Kyle with cooldown visualizer and anti-hacking measures
-* Updated home page
-* 
+### This Is The Final Version For This Collection
